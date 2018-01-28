@@ -124,24 +124,24 @@
       <cameraMatrix>
         <ValuesByColumn xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
           <d5p1:ArrayOfdouble>
-            <d5p1:double>2654.8934891873519</d5p1:double>
+            <d5p1:double>-2369.6883976166641</d5p1:double>
             <d5p1:double>0</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
             <d5p1:double>0</d5p1:double>
-            <d5p1:double>2654.8934891873519</d5p1:double>
+            <d5p1:double>-2369.6883976166641</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>985.1171305372261</d5p1:double>
-            <d5p1:double>132.56213922650591</d5p1:double>
+            <d5p1:double>586.87171417933644</d5p1:double>
+            <d5p1:double>-52.167533322895089</d5p1:double>
             <d5p1:double>1</d5p1:double>
           </d5p1:ArrayOfdouble>
         </ValuesByColumn>
       </cameraMatrix>
       <displayIndex>1</displayIndex>
-      <height>1080</height>
+      <height>768</height>
       <hostNameOrAddress>localhost</hostNameOrAddress>
       <lensDistortion>
         <ValuesByColumn xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
@@ -156,32 +156,32 @@
       <pose>
         <ValuesByColumn xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
           <d5p1:ArrayOfdouble>
-            <d5p1:double>0.973339319229126</d5p1:double>
-            <d5p1:double>0.028425738215446472</d5p1:double>
-            <d5p1:double>0.22760157287120819</d5p1:double>
+            <d5p1:double>0.9830547571182251</d5p1:double>
+            <d5p1:double>0.10222776979207993</d5p1:double>
+            <d5p1:double>-0.15216068923473358</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>-0.049356028437614441</d5p1:double>
-            <d5p1:double>0.9950021505355835</d5p1:double>
-            <d5p1:double>0.086802847683429718</d5p1:double>
+            <d5p1:double>-0.041003309190273285</d5p1:double>
+            <d5p1:double>0.93165695667266846</d5p1:double>
+            <d5p1:double>0.36101809144020081</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>-0.22399662435054779</d5p1:double>
-            <d5p1:double>-0.095722146332263947</d5p1:double>
-            <d5p1:double>0.96987771987915039</d5p1:double>
+            <d5p1:double>0.17866764962673187</d5p1:double>
+            <d5p1:double>-0.34866145253181458</d5p1:double>
+            <d5p1:double>0.920061469078064</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>1.0766672563632214</d5p1:double>
-            <d5p1:double>-0.34292317815847784</d5p1:double>
-            <d5p1:double>0.31983067449090852</d5p1:double>
+            <d5p1:double>-0.12461523480615447</d5p1:double>
+            <d5p1:double>-0.9612698766890484</d5p1:double>
+            <d5p1:double>4.8270680203684906</d5p1:double>
             <d5p1:double>1</d5p1:double>
           </d5p1:ArrayOfdouble>
         </ValuesByColumn>
       </pose>
-      <width>1920</width>
+      <width>1024</width>
     </ProjectorCameraEnsemble.Projector>
   </projectors>
 </ProjectorCameraEnsemble>

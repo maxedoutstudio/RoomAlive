@@ -232,6 +232,7 @@ namespace RoomAliveToolkit
             deviceContext.UnmapSubresource(vertexShaderConstantBuffer, 0);
         }
 
+
         [StructLayout(LayoutKind.Explicit, Size = VSConstantBuffer.size)]
         unsafe struct PSConstantBuffer
         {
@@ -261,7 +262,7 @@ namespace RoomAliveToolkit
             var constants = new PSConstantBuffer();
             for (int i = 0; i < 3; i++)
             {
-                constants.Ka[i] = material.ambientColor[i];
+                constants.Ka[i] = 5;
                 constants.Kd[i] = material.diffuseColor[i];
                 constants.Ks[i] = material.specularColor[i];
 
@@ -293,7 +294,11 @@ namespace RoomAliveToolkit
             deviceContext.PixelShader.SetSampler(0, colorSamplerState);
             deviceContext.PixelShader.SetConstantBuffer(0, pixelShaderConstantBuffer);
             deviceContext.OutputMerger.SetTargets(depthStencilView, renderTargetView);
-            deviceContext.OutputMerger.DepthStencilState = depthStencilState;
+
+
+            //deviceContext.OutputMerger.DepthStencilState = depthStencilState;
+            //deviceContext.ClearRenderTargetView(renderTargetView, Color4.Black);
+            //deviceContext.ClearDepthStencilView(depthStencilView, DepthStencilClearFlags.Depth, 1, 0);
 
             foreach (var subset in meshDeviceResources.mesh.subsets)
             //var subset = meshDeviceResources.mesh.subsets[meshDeviceResources.mesh.subsets.Count - 2];

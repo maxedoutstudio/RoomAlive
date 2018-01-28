@@ -40,6 +40,16 @@ namespace RoomAliveToolkit
         {
             var mesh = new Mesh();
             mesh.LoadFromOBJFile(filename);
+            // Checks if there are normals
+            if (mesh.vertices[0].normal.IsZero)
+            {
+                for (int i = 0; i < (mesh.vertices.Count)/3; i += 3)
+                {
+                    Vector3 normal = new Vector3(0, 0, 0);
+
+
+                }
+            }
             return mesh;
         }
 
@@ -97,8 +107,12 @@ namespace RoomAliveToolkit
                         vertex.position = positions[int.Parse(indices[0]) - 1]; // OBJ indices are 1-based    
                         if (indices[1] != "") // optional texture coords
                             vertex.texture = textureCoords[int.Parse(indices[1]) - 1];
-                        if (indices[2] != "") // optional normal
-                            vertex.normal = normals[int.Parse(indices[2]) - 1];
+                        if (indices.Length == 3)
+                        {
+                            // We need to calculate the normals if there aren't any later
+                            if (indices[2] != "") // optional normal
+                                vertex.normal = normals[int.Parse(indices[2]) - 1];
+                        }
                         vertices.Add(vertex);
                         subset.length++;
                     }
