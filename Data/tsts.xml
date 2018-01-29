@@ -124,18 +124,18 @@
       <cameraMatrix>
         <ValuesByColumn xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
           <d5p1:ArrayOfdouble>
-            <d5p1:double>-2369.6883976166641</d5p1:double>
+            <d5p1:double>2041.8591715621853</d5p1:double>
             <d5p1:double>0</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
             <d5p1:double>0</d5p1:double>
-            <d5p1:double>-2369.6883976166641</d5p1:double>
+            <d5p1:double>2041.8591715621853</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>586.87171417933644</d5p1:double>
-            <d5p1:double>-52.167533322895089</d5p1:double>
+            <d5p1:double>459.29939595403681</d5p1:double>
+            <d5p1:double>-201.69087046405915</d5p1:double>
             <d5p1:double>1</d5p1:double>
           </d5p1:ArrayOfdouble>
         </ValuesByColumn>
@@ -156,27 +156,27 @@
       <pose>
         <ValuesByColumn xmlns:d5p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
           <d5p1:ArrayOfdouble>
-            <d5p1:double>0.9830547571182251</d5p1:double>
-            <d5p1:double>0.10222776979207993</d5p1:double>
-            <d5p1:double>-0.15216068923473358</d5p1:double>
+            <d5p1:double>0.95729690790176392</d5p1:double>
+            <d5p1:double>-0.017901303246617317</d5p1:double>
+            <d5p1:double>0.28855180740356445</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>-0.041003309190273285</d5p1:double>
-            <d5p1:double>0.93165695667266846</d5p1:double>
-            <d5p1:double>0.36101809144020081</d5p1:double>
+            <d5p1:double>-0.069537639617919922</d5p1:double>
+            <d5p1:double>0.954522967338562</d5p1:double>
+            <d5p1:double>0.28991442918777466</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>0.17866764962673187</d5p1:double>
-            <d5p1:double>-0.34866145253181458</d5p1:double>
-            <d5p1:double>0.920061469078064</d5p1:double>
+            <d5p1:double>-0.28061914443969727</d5p1:double>
+            <d5p1:double>-0.29759937524795532</d5p1:double>
+            <d5p1:double>0.91251713037490845</d5p1:double>
             <d5p1:double>0</d5p1:double>
           </d5p1:ArrayOfdouble>
           <d5p1:ArrayOfdouble>
-            <d5p1:double>-0.12461523480615447</d5p1:double>
-            <d5p1:double>-0.9612698766890484</d5p1:double>
-            <d5p1:double>4.8270680203684906</d5p1:double>
+            <d5p1:double>0.54297970497416548</d5p1:double>
+            <d5p1:double>0.3324841277349998</d5p1:double>
+            <d5p1:double>0.12931130302331176</d5p1:double>
             <d5p1:double>1</d5p1:double>
           </d5p1:ArrayOfdouble>
         </ValuesByColumn>

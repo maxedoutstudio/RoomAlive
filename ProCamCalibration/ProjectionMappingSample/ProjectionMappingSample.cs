@@ -99,8 +99,8 @@ namespace RoomAliveToolkit
             }
 
             // example 3d object
-            var mesh = Mesh.FromOBJFile("Content/cube2.obj"); //@TODO change the mesh loaded
-            //var mesh = Mesh.FromOBJFile("Content/export1/export1.obj"); //@TODO change the mesh loaded
+            //var mesh = Mesh.FromOBJFile("Content/FloorPlan.obj"); //@TODO change the mesh loaded
+            var mesh = Mesh.FromOBJFile("Content/export1/export1.obj"); //@TODO change the mesh loaded
             meshDeviceResources = new MeshDeviceResources(device, imagingFactory, mesh);
 
             // desktop duplication
@@ -264,11 +264,11 @@ namespace RoomAliveToolkit
                     // 3d object
                     if (threeDObjectEnabled)
                     {
-                        var world = SharpDX.Matrix.Scaling(0.3f) * SharpDX.Matrix.RotationY(190.0f / 180.0f * (float)Math.PI) *
-                            SharpDX.Matrix.RotationX(0.0f / 180.0f * (float)Math.PI) * SharpDX.Matrix.Translation(0, 0.3f, 2.0f);
+                        var world = SharpDX.Matrix.Scaling(0.3f) * SharpDX.Matrix.RotationY(0.0f / 180.0f * (float)Math.PI) *
+                            SharpDX.Matrix.RotationX(0.0f / 180.0f * (float)Math.PI) * SharpDX.Matrix.Translation(0.0f, 0.3f, -1.0f);
 
                         var pointLight = new PointLight();
-                        pointLight.position = new Vector3(1, 0, -2);
+                        pointLight.position = new Vector3(1.0f, 0.0f, -10.0f);
                         pointLight.Ia = new Vector3(0.1f, 0.1f, 0.1f);
                         meshShader.SetVertexShaderConstants(deviceContext, world, userView * userProjection, pointLight.position);
                         meshShader.Render(deviceContext, meshDeviceResources, pointLight, userViewRenderTargetView, userViewDepthStencilView, userViewViewport);

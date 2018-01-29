@@ -42,16 +42,57 @@ namespace RoomAliveToolkit
             mesh.LoadFromOBJFile(filename);
             // Checks if there are normals
             if (mesh.vertices[0].normal.IsZero)
-            {
-                for (int i = 0; i < (mesh.vertices.Count)/3; i += 3)
-                {
-                    Vector3 normal = new Vector3(0, 0, 0);
-
-
-                }
-            }
+                mesh.CalculateNormals();
             return mesh;
         }
+
+        void CalculateNormals()
+        {
+            for (int i = 0; i < vertices.Count; i += 3)
+            {
+                Vector3 a = new Vector3(vertices[i].position.X, vertices[i].position.Y, vertices[i].position.Z);
+                Vector3 b = new Vector3(vertices[i+1].position.X, vertices[i + 1].position.Y, vertices[i + 1].position.Z);
+                Vector3 c = new Vector3(vertices[i+2].position.X, vertices[i + 2].position.Y, vertices[i + 2].position.Z);
+
+                Vector3 ab = b - a;
+                Vector3 ac = c - a;
+
+                Vector3 ba = -ab;
+                Vector3 bc = c - b;
+
+                Vector3 cb = -bc;
+                Vector3 ca = -ac;
+
+                Vector3 normalA = SharpDX.Vector3.Cross(ab, ac);
+                Vector3 normalB = SharpDX.Vector3.Cross(ba, bc);
+                Vector3 normalC = SharpDX.Vector3.Cross(cb, ca);
+
+                if (normalA.Y < 0)
+                    normalA = -normalA;
+
+                if (normalB.Y < 0)
+                    normalB = -normalB;
+
+                if (normalC.Y < 0)
+                    normalC = -normalC;
+
+                normalA.Normalize();
+                normalB.Normalize();
+                normalC.Normalize();
+
+                var vertexA = vertices[i];
+                var vertexB = vertices[i+1];
+                var vertexC = vertices[i+2];
+
+                vertexA.normal = normalA;
+                vertexB.normal = normalB;
+                vertexC.normal = normalC;
+
+                vertices[i] = vertexA;
+                vertices[i+1] = vertexB;
+                vertices[i+2] = vertexC;
+            }
+        }   
 
         void LoadFromOBJFile(string filename)
         {
@@ -88,7 +129,7 @@ namespace RoomAliveToolkit
                 {
                     float u = float.Parse(terms[1], CultureInfo.InvariantCulture);
                     float v = float.Parse(terms[2], CultureInfo.InvariantCulture);
-                    textureCoords.Add(new Vector2(u, v));
+                    textureCoords.Add(new Vector2(u, -v));
                 }
                 else if (command == "vn") // normal
                 {

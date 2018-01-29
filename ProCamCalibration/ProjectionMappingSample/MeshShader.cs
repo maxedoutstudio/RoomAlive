@@ -262,7 +262,7 @@ namespace RoomAliveToolkit
             var constants = new PSConstantBuffer();
             for (int i = 0; i < 3; i++)
             {
-                constants.Ka[i] = 5;
+                constants.Ka[i] = material.ambientColor[i];
                 constants.Kd[i] = material.diffuseColor[i];
                 constants.Ks[i] = material.specularColor[i];
 
