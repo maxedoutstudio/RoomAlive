@@ -272,6 +272,9 @@ namespace RoomAliveToolkit
                         pointLight.Ia = new Vector3(0.1f, 0.1f, 0.1f);
                         meshShader.SetVertexShaderConstants(deviceContext, world, userView * userProjection, pointLight.position);
                         meshShader.Render(deviceContext, meshDeviceResources, pointLight, userViewRenderTargetView, userViewDepthStencilView, userViewViewport);
+
+                        //bilateralFilter.Render(deviceContext, cameraDeviceResource.floatDepthImageRV, cameraDeviceResource.floatDepthImageRenderTargetView2);
+                        //bilateralFilter.Render(deviceContext, cameraDeviceResource.floatDepthImageRV2, cameraDeviceResource.floatDepthImageRenderTargetView);
                     }
 
                     // wobble effect

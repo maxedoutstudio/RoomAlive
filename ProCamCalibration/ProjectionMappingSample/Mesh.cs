@@ -32,6 +32,8 @@ namespace RoomAliveToolkit
             public string textureFilename;
         }
 
+        private static float CULLING_CUTOFF = 10.0f;
+
         public List<VertexPositionNormalTexture> vertices = new List<VertexPositionNormalTexture>();
         public List<Subset> subsets = new List<Subset>();
         public Dictionary<string, Material> materials = new Dictionary<string, Material>();
@@ -43,6 +45,12 @@ namespace RoomAliveToolkit
             // Checks if there are normals
             if (mesh.vertices[0].normal.IsZero)
                 mesh.CalculateNormals();
+            // Does some basic cullling
+            foreach(VertexPositionNormalTexture vpnt in mesh.vertices)
+            {
+                if (vpnt.position.Z < CULLING_CUTOFF)
+                    mesh.vertices.Remove(vpnt);
+            }
             return mesh;
         }
 
