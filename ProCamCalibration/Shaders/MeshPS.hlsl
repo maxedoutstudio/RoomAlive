@@ -16,8 +16,9 @@ cbuffer constants : register(b0)
 
 float4 main(PSInput input) : SV_TARGET0
 {
-	float3 lightDir = normalize(input.lightDir);
+	//float3 lightDir = normalize(input.lightDir);
 	float3 normal = normalize(input.normal);
-	float3 color = Ka * Ia + Kd * saturate(dot(lightDir, normal)) * Id;
+	// color = Ka * Ia + Kd * saturate(dot(lightDir, normal)) * Id;
+	float3 color = Ka * Ia + Kd * Id;
 	return float4(color, 1);
 }

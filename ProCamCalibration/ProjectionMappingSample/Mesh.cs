@@ -32,7 +32,8 @@ namespace RoomAliveToolkit
             public string textureFilename;
         }
 
-        private static float CULLING_CUTOFF = 0.9f;
+        //private static float CULLING_CUTOFF = 0.8f;
+        private static float CULLING_CUTOFF = 1.7f;
 
         public List<VertexPositionNormalTexture> vertices = new List<VertexPositionNormalTexture>();
         public List<Subset> subsets = new List<Subset>();
