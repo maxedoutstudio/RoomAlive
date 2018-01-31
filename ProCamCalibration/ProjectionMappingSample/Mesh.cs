@@ -32,7 +32,7 @@ namespace RoomAliveToolkit
             public string textureFilename;
         }
 
-        private static float CULLING_CUTOFF = 10.0f;
+        private static float CULLING_CUTOFF = 0.9f;
 
         public List<VertexPositionNormalTexture> vertices = new List<VertexPositionNormalTexture>();
         public List<Subset> subsets = new List<Subset>();
@@ -43,14 +43,9 @@ namespace RoomAliveToolkit
             var mesh = new Mesh();
             mesh.LoadFromOBJFile(filename);
             // Checks if there are normals
-            if (mesh.vertices[0].normal.IsZero)
+            if (mesh.vertices.Count != 0 && mesh.vertices[0].normal.IsZero)
                 mesh.CalculateNormals();
-            // Does some basic cullling
-            foreach(VertexPositionNormalTexture vpnt in mesh.vertices)
-            {
-                if (vpnt.position.Z < CULLING_CUTOFF)
-                    mesh.vertices.Remove(vpnt);
-            }
+
             return mesh;
         }
 
@@ -148,12 +143,19 @@ namespace RoomAliveToolkit
                 }
                 else if (command == "f") // face
                 {
+                    List<VertexPositionNormalTexture> tempVertices = new List<VertexPositionNormalTexture>();
                     for (int i = 0; i < 3; i++)
                     {
                         // TODO: suppoprt relative (negative) indices
                         var indices = terms[1 + i].Split('/');
                         var vertex = new VertexPositionNormalTexture();
-                        vertex.position = positions[int.Parse(indices[0]) - 1]; // OBJ indices are 1-based    
+                        vertex.position = positions[int.Parse(indices[0]) - 1]; // OBJ indices are 1-based
+                        
+                        // Don't load the vertex if we are outside the culling cutoff
+                        if (vertex.position.Z < -CULLING_CUTOFF || vertex.position.Z > CULLING_CUTOFF)
+                        {
+                            break;
+                        }
                         if (indices[1] != "") // optional texture coords
                             vertex.texture = textureCoords[int.Parse(indices[1]) - 1];
                         if (indices.Length == 3)
@@ -162,8 +164,16 @@ namespace RoomAliveToolkit
                             if (indices[2] != "") // optional normal
                                 vertex.normal = normals[int.Parse(indices[2]) - 1];
                         }
-                        vertices.Add(vertex);
+                        tempVertices.Add(vertex);
                         subset.length++;
+                    }
+                    
+                    if (tempVertices.Count == 3)
+                    {
+                        foreach (VertexPositionNormalTexture vpnt in tempVertices)
+                        {
+                            vertices.Add(vpnt);
+                        }
                     }
                 }
                 else if (command == "mtllib") // .mtl file reference

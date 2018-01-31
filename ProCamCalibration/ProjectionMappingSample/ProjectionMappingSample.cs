@@ -265,7 +265,7 @@ namespace RoomAliveToolkit
                     if (threeDObjectEnabled)
                     {
                         var world = SharpDX.Matrix.Scaling(0.3f) * SharpDX.Matrix.RotationY(0.0f / 180.0f * (float)Math.PI) *
-                            SharpDX.Matrix.RotationX(0.0f / 180.0f * (float)Math.PI) * SharpDX.Matrix.Translation(0.0f, 0.3f, -1.0f);
+                            SharpDX.Matrix.RotationX(0.0f / 180.0f * (float)Math.PI) * SharpDX.Matrix.Translation(0.5f, 0.5f, -1.0f);
 
                         var pointLight = new PointLight();
                         pointLight.position = new Vector3(1.0f, 0.0f, -10.0f);
